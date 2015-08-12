@@ -27,7 +27,7 @@ To build on your learning of core engineering concepts, we will beging thinking 
 -->
 
 
-## Basic Requirements
+## Bare Minimum Requirements
 - [ ] Fork the [repo](https://github.com/hackreactor/2014-07-solo)
 - Complete the README.md template (<30min)
   - [ ] Pick an idea (implement a technology, build a product, make art, etc).
@@ -40,7 +40,7 @@ To build on your learning of core engineering concepts, we will beging thinking 
 - [ ] Prepare for pitch @ demo on Tuesday
 
 
-## Extra Credit
+## Advanced
 
 - [ ] Storage - if your app persists data, use a tool like Parse or Firebase. 
 - [ ] Use Liberator, then deploy your app so the whole world can see!
