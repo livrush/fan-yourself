@@ -1,9 +1,8 @@
-
 # MVP (Solo) Project
 
 ### Overview:
 
-You have 36 hours to produce something compelling using the skills you've honed over the past five weeks. 
+You have 36 hours to produce something compelling using the skills you've honed over the past five weeks.
 
 __Q:__ What are your inputs?
 <br>
@@ -12,7 +11,6 @@ __A:__ 36 hours of (relatively) undivided attention
 __Q:__ What is the required output?
 <br>
 __A:__ A compelling product presentation delivered to your classmates.
-
 
 ### Getting Started:
 
@@ -28,8 +26,7 @@ To build on your learning of core engineering concepts, we will beging thinking 
 
 
 ## Bare Minimum Requirements
-- [ ] Fork the [repo](https://github.com/hackreactor/2014-07-solo)
-- Complete the README.md template (<30min)
+- [ ] Complete the README.md template (<30min)
   - [ ] Pick an idea (implement a technology, build a product, make art, etc).
   - [ ] Write it down on paper
   - [ ] Imagine what portion of this could be done in 24 hours.
@@ -37,12 +34,11 @@ To build on your learning of core engineering concepts, we will beging thinking 
   - [ ] Cut the above scope in half again.
   - [ ] Fill in the README.md template document
 - [ ] Use iterative development (go straight to something that demo's your idea)
-- [ ] Prepare for pitch @ demo on Tuesday
+- [ ] Prepare for to give a pitch and demonstration of your work
 
 
 ## Advanced
 
-- [ ] Storage - if your app persists data, use a tool like Parse or Firebase. 
+- [ ] Storage - if your app persists data, use a tool like Parse or Firebase.
 - [ ] Use Liberator, then deploy your app so the whole world can see!
-- [ ] If applicable, use an MVC Framework - Make your app production grade with a full-on MVC. 
-
+- [ ] If applicable, use an MVC Framework - Make your app production grade with a full-on MVC.
