@@ -1,0 +1,16 @@
+{
+  "name": "MVP",
+  "description": "Learn iterative development under threat of scope creep while putting your full stack JS skills to the test.",
+
+  "syllabus": [
+
+    { "title": "MVP Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
+
+  ],
+
+  "phases": {
+    "Sprint Solution": [
+      { "title": "Solution Code", "type": "download", "id": "solution", "folder": "code", "transform": ["problemify-solve"] }
+    ]
+  }
+}
