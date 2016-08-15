@@ -6,11 +6,5 @@
 
     { "title": "MVP Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
 
-  ],
-
-  "phases": {
-    "Sprint Solution": [
-      { "title": "Solution Code", "type": "download", "id": "solution", "folder": "code", "transform": ["problemify-solve"] }
-    ]
-  }
+  ]
 }
