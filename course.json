@@ -6,5 +6,7 @@
 
     { "title": "MVP Repository", "type": "download", "id": "exercise", "folder": "code", "transform": ["problemify-export"] }
 
-  ]
+  ],
+
+  "phases": {}
 }
