@@ -1,11 +1,12 @@
 module.exports = {
-    "extends": "airbnb-base",
-    "plugins": [
-        "import"
-    ],
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "sourceType": "module",
-      "allowImportExportEverywhere": false
-  }
+    // "extends": "airbnb-base",
+    extends: './node_modules/eslint-config-hackreactor/index.js'
+  //   "plugins": [
+  //       "import"
+  //   ],
+  //   "parser": "babel-eslint",
+  //   "parserOptions": {
+  //     "sourceType": "module",
+  //     "allowImportExportEverywhere": false
+  // }
 };
