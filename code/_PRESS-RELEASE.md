@@ -22,19 +22,19 @@ Once the project moves into development, the press release can be used as a touc
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
-
+  Easy logo design for people intimidated by complicated image design programs.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
-  Logoer provides a
+  Logoer provides a simple interface to create your desired logo for whatever product you may have.
 
 ## Problem ##
   > Describe the problem your product solves.
-
+  Simplifying logo creation, moving away from complicated programs like Photoshop.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
-
+  Interface that lets you inject preset values onto a canvas and manipulate them to your liking.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.
@@ -42,11 +42,12 @@ Once the project moves into development, the press release can be used as a touc
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
-  
+  Every time you open Logoer you will be given a randomized logo to draw inspiration from. Then, you can either manipulate the provided example or start from scratch to create the logo of your dreams!
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-
+  Logoer helped me raise my business to the next level with a professional logo!
 
 ## Closing and Call to Action ##
   > Wrap it up and give pointers where the reader should go next.
+  

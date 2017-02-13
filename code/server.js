@@ -10,5 +10,3 @@ app.listen(PORT, function() {
 app.get('/', (req, res) =>
   res.sendFile(__dirname + '/index.html')
 );
-
-console.log('Server has appeared')
