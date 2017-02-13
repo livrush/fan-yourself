@@ -3,6 +3,7 @@
 <head>
   <title>Logoer</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="shapes.css">
 </head>
 <body ng-app="logoer" >
 
@@ -11,24 +12,44 @@
   </nav>
 
   <div id="container">
-    <form action="POST" id="control" ng-controller="UIController">
+    <form id="control" ng-controller="UIController">
+      <p>
+        Name: <input type="text" name="name" value="">
+      </p>
+      <p>
+        Text: <input type="text" name="text" value="">
+      </p>
+      <p>
+        Creator: <input type="text" name="creator" value="">
+      </p>
+
+      <p>
+        <select id="shape" ng-model="selectedShape" ng-options="shape for shape in shapes" value="{{shape}}"></select>
+        <button ng-click="test('Yo')">Add shape</button>
+      </p>
+
+      <p>
+        <select id="pos" ng-model="selectedPosition" value="{{pos}}" ng-options="pos for (key, pos) in positions">
+          <!-- <option ng-repeat="pos for (key, pos) in positions">
+            {{ pos }}
+          </option> -->
+        </select>
+        <button ng-click="test()">Position shape</button>
+      </p>
+
+
       <ul>
         <li ng-repeat="color in colors" ng-style="{'color':'{{ color }}'}"> {{ color }} </li>
       </ul>
-      <input type="text" name="color" value="">
-      <p>Thing</p>
-      <input type="text">
-      <button>Submit</button>
-
-
-
-      <select ng-model="shapes" ng-options="shape for shape in shapes">Shapes</select>
-
-      <select ng-model="positions" ng-options="x for x in positions"></select>
-
+      <button>SAVE</button>
     </form>
 
-    <div id="canvas"></div>
+    <div id="canvas">
+      <svg width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <rect fill="red" x="20" y="20" width="100" height="75" />
+        <rect fill="green" x="50" y="50" width="100" height="75" />
+      </svg>
+    </div>
   </div>
 
 
