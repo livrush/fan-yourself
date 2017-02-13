@@ -2,7 +2,7 @@ console.log('Hello world');
 
 angular.module('logoer', [
   'logoer.fact',
-  'logoer.controller',
+  'UI.controller',
   'ngRoute',
   'ngMessages',
 ])

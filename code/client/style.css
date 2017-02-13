@@ -1,3 +1,28 @@
 body {
-  background: red;
+  font-family: sans-serif;
+
+}
+
+h1 {
+  font-family: futura;
+}
+
+#container {
+  display: flex;
+  margin: auto;
+}
+
+#control {
+  height:400px;
+  width:250px;
+  padding: 25px;
+  background: #ffafaf;
+  margin-right: 50px;
+}
+
+#canvas {
+  height:400px;
+  width:400px;
+  padding: 25px;
+  background: blue;
 }

@@ -4,28 +4,41 @@
   <title>Logoer</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body ng-app="logoer" ng-controller="LogoController">
-  Hello HTML
+<body ng-app="logoer" >
 
-  <ul>
-    <li ng-repeat="color in colors"> {{ color }} test</li>
-  </ul>
+  <nav>
+    <h1>Logoer</h1>
+  </nav>
 
-  <form action="POST">
-    <h1>Hello</h1>
-    <p>Color {{ 1 + 1 }}</p>
-    <input type="text" name="color" value="">
-    <p>Thing</p>
-    <input type="text">
-    <button>Submit</button>
-  </form>
+  <div id="container">
+    <form action="POST" id="control" ng-controller="UIController">
+      <ul>
+        <li ng-repeat="color in colors" ng-style="{'color':'{{ color }}'}"> {{ color }} </li>
+      </ul>
+      <input type="text" name="color" value="">
+      <p>Thing</p>
+      <input type="text">
+      <button>Submit</button>
+
+
+
+      <select ng-model="shapes" ng-options="shape for shape in shapes">Shapes</select>
+
+      <select ng-model="positions" ng-options="x for x in positions"></select>
+
+    </form>
+
+    <div id="canvas"></div>
+  </div>
+
+
 
   <script src="./randomHex.js"></script>
   <script src="/lib/angular/angular.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
   <script src="/lib/angular-messages/angular-messages.min.js"></script>
   <script src="./controllers/factory.js"></script>
-  <script src="./controllers/idk.js"></script>
+  <script src="./controllers/UI.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>
