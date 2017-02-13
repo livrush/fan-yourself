@@ -4,11 +4,11 @@
   <title>Logoer</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body ng-app="logoer" ng-controller="logoer.controller">
+<body ng-app="logoer" ng-controller="LogoController">
   Hello HTML
 
   <ul>
-    <li ng-repeat="for color in colors"> {{color}} test</li>
+    <li ng-repeat="color in colors"> {{ color }} test</li>
   </ul>
 
   <form action="POST">
@@ -20,6 +20,7 @@
     <button>Submit</button>
   </form>
 
+  <script src="./randomHex.js"></script>
   <script src="/lib/angular/angular.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
   <script src="/lib/angular-messages/angular-messages.min.js"></script>
