@@ -9,57 +9,20 @@
 
   <nav>
     <h1>Logoer</h1>
+    <ul id="account">
+      <li>Sign In</li>
+      <li>Sign Up</li>
+    </ul>
   </nav>
 
-  <div id="container">
-    <form id="control" ng-controller="UIController">
-      <p>
-        Name: <input type="text" name="name" value="">
-      </p>
-      <p>
-        Text: <input type="text" name="text" value="">
-      </p>
-      <p>
-        Creator: <input type="text" name="creator" value="">
-      </p>
-
-      <p>
-        <select id="shape" ng-model="selectedShape" ng-options="shape for shape in shapes" value="{{shape}}"></select>
-        <button ng-click="test('Yo')">Add shape</button>
-      </p>
-
-      <p>
-        <select id="pos" ng-model="selectedPosition" value="{{pos}}" ng-options="pos for (key, pos) in positions">
-          <!-- <option ng-repeat="pos for (key, pos) in positions">
-            {{ pos }}
-          </option> -->
-        </select>
-        <button ng-click="test()">Position shape</button>
-      </p>
-
-
-      <ul>
-        <li ng-repeat="color in colors" ng-style="{'color':'{{ color }}'}"> {{ color }} </li>
-      </ul>
-      <button>SAVE</button>
-    </form>
-
-    <div id="canvas">
-      <svg width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
-        <rect fill="red" x="20" y="20" width="100" height="75" />
-        <rect fill="green" x="50" y="50" width="100" height="75" />
-      </svg>
-    </div>
-  </div>
-
-
+  <div ng-view></div>
 
   <script src="./randomHex.js"></script>
   <script src="/lib/angular/angular.min.js"></script>
   <script src="/lib/angular-route/angular-route.min.js"></script>
   <script src="/lib/angular-messages/angular-messages.min.js"></script>
   <script src="./controllers/factory.js"></script>
-  <script src="./controllers/UI.js"></script>
+  <script src="./app/userInterface/UI.js"></script>
   <script src="./app.js"></script>
 </body>
 </html>

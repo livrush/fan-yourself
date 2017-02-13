@@ -12,20 +12,9 @@ angular.module('UI.controller', [])
     'square',
     'circle',
     'pentagon',
-    'rhombus'
+    'rhombus',
+    'heart'
   ];
-
-  // $scope.positions = [
-  //   'top left',
-  //   'top center',
-  //   'top right',
-  //   'center left',
-  //   'center center',
-  //   'center right',
-  //   'bottom left',
-  //   'bottom center',
-  //   'bottom right',
-  // ];
 
   $scope.positions = {
     1: 'top left',
@@ -38,6 +27,18 @@ angular.module('UI.controller', [])
     8: 'bottom center',
     9: 'bottom right'
   };
+
+  $scope.addShape = function(shape) {
+    console.log('you\'ve got a', shape);
+    if (shape === 'circle') {
+      console.log('round');
+    } else if (shape === 'triangle') {
+      console.log('nice');
+    } else if (shape === 'square') {
+      console.log('lame');
+    }
+  };
+
 
 
   $scope.test = function(data) {

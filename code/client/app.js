@@ -8,5 +8,16 @@ angular.module('logoer', [
 ])
 .config(['$routeProvider', function ($routeProvider) {
   $routeProvider
-  .when('/', { templateUrl: 'index.html', controller: 'LogoController' });
+  .when('/', {
+    templateUrl: './app/userInterface/UI.html',
+    controller: 'UIController'
+  })
+  .when('/sign-up', {
+    templateUrl: './templates/sign-up.html',
+    controller: ''
+  })
+  .when('/sign-in', {
+    templateUrl: './templates/sign-in.html',
+    controller: ''
+  });
 }]);
