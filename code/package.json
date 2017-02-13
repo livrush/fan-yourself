@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/phrush/OS-MVP/issues"
   },
-  "homepage": "https://github.com/phrush/OS-MVP#readme"
+  "homepage": "https://github.com/phrush/OS-MVP#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "express": "^4.14.1",
+    "mongodb": "^2.2.23"
+  }
 }
