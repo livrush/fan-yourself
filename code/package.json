@@ -1,0 +1,19 @@
+{
+  "name": "logoer",
+  "version": "1.0.0",
+  "description": "logo designer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phrush/OS-MVP.git"
+  },
+  "author": "Olivia Sabo-Rush",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phrush/OS-MVP/issues"
+  },
+  "homepage": "https://github.com/phrush/OS-MVP#readme"
+}
