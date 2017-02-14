@@ -1,24 +1,26 @@
-console.log('Hello world');
-
 angular.module('logoer', [
   'logoer.fact',
-  'UI.controller',
-  'auth.control',
+  'logoer.UI',
+  'logoer.auth',
   'ngRoute',
   'ngMessages',
 ])
-.config(['$routeProvider', function ($routeProvider) {
+.config( function ($routeProvider) {
+  console.log('wtf');
   $routeProvider
-  .when('/signup', {
-    templateUrl: './app/auth/sign-up.html',
-    controller: 'AuthControl'
+  .when('/maker', {
+    templateUrl: 'app/userInterface/UI.html',
+    controller: 'UIControl'
   })
   .when('/signin', {
-    templateUrl: './app/auth/sign-in.html',
+    templateUrl: 'app/auth/sign-in.html',
     controller: 'AuthControl'
   })
-  .when('/', {
-    templateUrl: './app/userInterface/UI.html',
-    controller: 'UIController'
+  .when('/signup', {
+    templateUrl: 'app/auth/sign-up.html',
+    controller: 'AuthControl'
+  })
+  .otherwise({
+    redirectTo: '/maker'
   });
-}]);
+});

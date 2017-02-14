@@ -1,5 +1,9 @@
-angular.module('UI.controller', [])
-.controller('UIController', function($scope, Colors) {
+angular.module('logoer.UI', [])
+.controller('UIControl', function($scope, Colors) {
+  $scope.test = function(data) {
+    console.log(data || 'You did it');
+  };
+
   $scope.colors = [
     Colors.hex(),
     Colors.hex(),
@@ -53,10 +57,10 @@ angular.module('UI.controller', [])
     document.getElementById(ele).value = Colors.hex();
   };
 
-  $scope.test = function(data) {
-
-    console.log(data || 'You did it');
+  $scope.randomColor = function(font) {
+    console.log(font);
   };
+
 });
 
 console.log('controller');

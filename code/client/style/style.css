@@ -5,6 +5,7 @@ body {
 
 h1 {
   margin: 0;
+  font-family: futura;
 }
 
 nav {
@@ -34,6 +35,7 @@ nav li {
 }
 
 #container {
+  position: relative;
   display: flex;
   margin: auto;
   width: 800px;
@@ -47,9 +49,19 @@ nav li {
   margin-right: 50px;
 }
 
-#canvas {
-  height:400px;
-  width:400px;
-  padding: 25px;
-  background: blue;
+select, button {
+  width: 120px;
+}
+
+input {
+  width: 114px;
+}
+
+td {
+  padding-bottom: 5px;
+}
+
+.userForm {
+  width: 300px;
+  margin: auto;
 }

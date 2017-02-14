@@ -1,4 +1,4 @@
-angular.module('auth.control', [])
+angular.module('logoer.auth', [])
 .controller('AuthControl', function($scope) {
 
 });

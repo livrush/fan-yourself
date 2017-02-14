@@ -1,0 +1,17 @@
+#canvas {
+  position:relative;
+  height:400px;
+  width:400px;
+  padding: 25px;
+  background: blue;
+}
+
+#mainText {
+  position: absolute;
+  margin:auto;
+  text-align: center;
+  width: 400px;
+  color: white;
+  font-size: 50px;
+  top: 200px;
+}

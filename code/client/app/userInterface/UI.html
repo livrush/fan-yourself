@@ -1,24 +1,23 @@
 <!DOCTYPE html>
-<div id="container" ng-app="logoer" ng-controller="UIController">
-
+<div id="container" ng-app="logoer" ng-controller="UIControl">
   <form id="control">
 
     <table>
       <tr>
         <td>Name:</td>
-        <td><input id="logoName" type="text" value=""></td>
+        <td><input id="logoName" type="text" value="" placeholder="of your brand"></td>
       </tr>
       <tr>
         <td>Text:</td>
-        <td><input id="logoText" type="text" ng-model="logoText"></td>
+        <td><input id="logoText" type="text" ng-model="logoText" placeholder="to appear on logo"></td>
       </tr>
       <tr>
         <td>Font:</td>
-        <td><select id="font" ng-model="selectedFont" ng-options="font for font in fonts" value=""></select></td>
+        <td><select id="font" ng-model="selectedFont" ng-click="changeFont(selectedFont)" ng-options="font for font in fonts"></select></td>
       </tr>
       <tr>
         <td>Color:</td>
-        <td><input id="hexColor" type="text" name="color" value="yo"></td>
+        <td><input id="hexColor" type="text" placeholder="Try random sometime!"></td>
       </tr>
       <tr>
         <td></td>
@@ -43,7 +42,7 @@
 
   <div id="canvas">
     <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
-      <div id="mainText">{{ logoText }}</div>
     </svg>
+    <div id="mainText">{{ logoText }}</div>
   </div>
 </div>
