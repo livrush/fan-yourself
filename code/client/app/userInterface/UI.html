@@ -3,37 +3,50 @@
   <form id="control">
 
     <table>
+      <!-- NAME INPUT -->
       <tr>
         <td>Name:</td>
         <td><input id="logoName" type="text" value="" placeholder="of your brand"></td>
       </tr>
+      <!-- TYPE INPUT -->
       <tr>
+        <td id="textHeader" ng-click="formChange(true)"><a href="">Text</a></td>
+        <td id="shapeHeader" ng-click="formChange(false)"><a href="">Shape</a></td>
+      </tr>
+      <!-- TEXT INPUT -->
+      <tr ng-show="type">
         <td>Text:</td>
         <td><input id="logoText" type="text" ng-model="logoText" placeholder="to appear on logo"></td>
       </tr>
-      <tr>
+      <!-- FONT INPUT -->
+      <tr ng-show="type">
         <td>Font:</td>
-        <td><select id="font" ng-model="selectedFont" ng-switch="changeFont(selectedFont)" ng-options="font for font in fonts"></select></td>
+        <td><select id="font"
+        ng-model="selectedFont"
+        ng-switch="changeFont(selectedFont)"
+        ng-options="font for font in fonts"></select></td>
       </tr>
-      <tr>
-        <td>Color:</td>
-        <td><input id="hexColor" type="text" placeholder="Try random sometime!"></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><button ng-click="randomColor('hexColor')">Random color</button></td>
-      </tr>
-      <tr>
+      <!-- SHAPE INPUT -->
+      <tr ng-show="!type">
         <td><select id="shape" ng-model="selectedShape" ng-options="shape for shape in shapes" value="{{shape}}"></select></td>
         <td><button ng-click="addShape(selectedShape)">Add Shape</button></td>
       </tr>
-      <tr>
-        <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesCache" value="{{shape}}"></select></td>
+      <tr ng-show="!type">
+          <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesCache" value="{{shape}}"></select></td>
         <td><button ng-click="removeShape(selectedCache)">Delete Shape</button></td>
       </tr>
-      <tr>
+      <tr ng-show="!type">
         <td><select id="pos" ng-model="selectedPosition" value="{{pos}}" ng-options="pos for (key, pos) in positions"></select></td>
         <td><button ng-click="positionShape(selectedPosition)">Position shape</button></td>
+      </tr>
+      <!-- COLOR INPUT -->
+      <tr>
+        <td>Color:</td>
+        <td><input id="hexColor" type="text" ng-keyup="changeColor()" placeholder="Try random sometime!"></td>
+      </tr>
+      <tr>
+        <td><button ng-click="randomColor()">Random color</button></td>
+        <td><button ng-click="test()">Set</button></td>
       </tr>
     </table>
 
@@ -43,6 +56,6 @@
   <div id="canvas">
     <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <div id="mainText">Logo Text {{ logoText }}</div>
+    <div id="mainText">{{ logoText }}</div>
   </div>
 </div>

@@ -6,14 +6,19 @@ angular.module('logoer.UI', [])
 
   $scope.shapesCache = [];
 
-  $scope.shapes = [
-    'triangle',
-    'square',
-    'circle',
-    'pentagon',
-    'rhombus',
-    'heart'
+  $scope.type = true;
+
+  $scope.formChange = function(bool) {
+    $scope.type = bool;
+
+  };
+
+  $scope.types = [
+    'text',
+    'shape'
   ].sort();
+
+  // Next up is changing UI to specify between types!!!
 
   $scope.fonts = [
     'Arial',
@@ -25,6 +30,15 @@ angular.module('logoer.UI', [])
     'Courier New',
     'Arial Black',
     'Impact'
+  ].sort();
+
+  $scope.shapes = [
+    'triangle',
+    'square',
+    'circle',
+    'pentagon',
+    'rhombus',
+    'heart'
   ].sort();
 
   $scope.positions = {
@@ -50,8 +64,13 @@ angular.module('logoer.UI', [])
     $scope.shapesCache.splice(i, 1);
   };
 
-  $scope.randomColor = function(ele) {
-    document.getElementById(ele).value = Colors.hex();
+  $scope.changeColor = function() {
+    let input = document.getElementById('hexColor').value;
+    Colors.change(input);
+  };
+
+  $scope.randomColor = function() {
+    Colors.change(Colors.hex());
   };
 
   $scope.changeFont = function(font) {
