@@ -18,14 +18,14 @@ angular.module('logoer.auth', [])
   };
 
   $scope.signup = function (user) {
-    Auth.signup($scope.user);
-      // .then(function (token) {
-      //   $window.localStorage.setItem('com.logoer', token);
-      //   $location.path('/maker');
-      // })
-      // .catch(function (error) {
-      //   console.error(error);
-      // });
+    Auth.signup($scope.user)
+      .then(function () {
+        // $window.localStorage.setItem('com.logoer', token);
+        $location.path('/maker');
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
   };
 
 
