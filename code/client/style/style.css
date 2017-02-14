@@ -82,3 +82,8 @@ td {
 .userForm td {
   text-align: left;
 }
+
+#hexColor {
+  background: url('../assets/input.png') repeat-y;
+  background-color: white;
+}
