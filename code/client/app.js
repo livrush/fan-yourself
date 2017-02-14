@@ -1,5 +1,6 @@
 angular.module('logoer', [
   'logoer.services',
+  'logoer.forms',
   'logoer.shapes',
   'logoer.UI',
   'logoer.auth',

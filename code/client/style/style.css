@@ -48,6 +48,7 @@ nav li {
   padding: 25px;
   background: #ffafaf;
   margin-right: 50px;
+  text-align: center;
 }
 
 select, button {
@@ -80,7 +81,6 @@ td {
 }
 
 .userForm table {
-  background: black;
   text-align: center;
   width: 250px;
   margin: auto;

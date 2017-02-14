@@ -1,20 +1,24 @@
-<div class="userForm" ng-controller="AuthControl">
+<!DOCTYPE html>
+<div class="userForm">
   <h1>SIGN UP</h1>
-  <form>
+  <form name="signUp" ng-submit="signup(user)" action="/signup" method="POST">
     <table>
       <tr>
         <td>Username:</td>
-        <td><input type="text"></td>
-      </tr>
-      <tr>
-        <td>Password:</td>
-        <td><input type="text"></td>
+        <td><input type="text" ng-model="user.username"></td>
       </tr>
       <tr>
         <td>eMail:</td>
-        <td><input type="text"></td>
+        <td><input type="text" ng-model="user.email"></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><input type="password" ng-model="user.password" ng-minlength="3" ng-maxlength="20" required></td>
       </tr>
     </table>
+    <div ng-messages="signUp.$error" class="error" role="alert">
+      <div ng-message="minlength maxlength">Password must be 3-20 characters</div>
+    </div>
     <button type="submit">Submit</button>
   </form>
 </div>
