@@ -1,7 +1,9 @@
 angular.module('logoer', [
   'logoer.services',
+  'logoer.shapes',
   'logoer.UI',
   'logoer.auth',
+  'ngDragDrop',
   'ngRoute',
   'ngMessages',
 ])
