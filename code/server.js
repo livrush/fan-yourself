@@ -24,7 +24,7 @@ MongoClient.connect(MONGOURI, (err, database) => {
 });
 
 app.post('/signup', (req, res) => {
-  console.log(req);
+  console.log(req.body);
   db.collection('users').save(req.body, (err, result) => {
     if (err) { return console.log(err); }
     console.log('saved to database');

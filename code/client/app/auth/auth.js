@@ -1,6 +1,10 @@
 angular.module('logoer.auth', [])
 .controller('AuthControl', function ($scope, $window, $location, Auth) {
-  $scope.user = {};
+  $scope.user = {
+    username: 'asdf',
+    email: 'asdf',
+    password: 'asdf'
+  };
 
   $scope.signin = function () {
     Auth.signin($scope.user)
