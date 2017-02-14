@@ -1,28 +1,28 @@
+<!DOCTYPE html>
 <div id="container" ng-app="logoer" ng-controller="UIController">
-
 
   <form id="control">
 
     <table>
       <tr>
         <td>Name:</td>
-        <td><input type="text" name="name" value=""></td>
+        <td><input id="logoName" type="text" value=""></td>
       </tr>
       <tr>
         <td>Text:</td>
-        <td><input type="text" name="text" value=""></td>
+        <td><input id="logoText" type="text" ng-model="logoText"></td>
       </tr>
       <tr>
-        <td>Creator:</td>
-        <td><input type="text" name="creator" value=""></td>
+        <td>Font:</td>
+        <td><select id="font" ng-model="selectedFont" ng-options="font for font in fonts" value=""></select></td>
       </tr>
       <tr>
         <td>Color:</td>
-        <td><input type="text" name="color" value="{{  }}"></td>
+        <td><input id="hexColor" type="text" name="color" value="yo"></td>
       </tr>
       <tr>
         <td></td>
-        <td><button ng-click="randomColor()">Random color</button></td>
+        <td><button ng-click="randomColor('hexColor')">Random color</button></td>
       </tr>
       <tr>
         <td><select id="shape" ng-model="selectedShape" ng-options="shape for shape in shapes" value="{{shape}}"></select></td>
@@ -34,15 +34,16 @@
       </tr>
     </table>
 
-
     <ul>
       <li ng-repeat="color in colors" ng-style="{'color':'{{ color }}'}"> {{ color }} </li>
     </ul>
+
     <button action="POST">SAVE</button>
   </form>
 
   <div id="canvas">
-    <svg width="200" height="200" version="1.1" xmlns="http://www.w3.org/2000/svg">
+    <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <div id="mainText">{{ logoText }}</div>
     </svg>
   </div>
 </div>

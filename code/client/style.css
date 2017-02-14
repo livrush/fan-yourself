@@ -18,6 +18,10 @@ nav {
   color: white;
 }
 
+nav a {
+  color: white;
+}
+
 nav ul {
   margin: 0;
   display: flex;

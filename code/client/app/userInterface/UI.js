@@ -14,7 +14,15 @@ angular.module('UI.controller', [])
     'pentagon',
     'rhombus',
     'heart'
-  ];
+  ].sort();
+
+  $scope.fonts = [
+    'Arial',
+    'Helvetica',
+    'Times',
+    'Comic Sans',
+    'Papyrus'
+  ].sort();
 
   $scope.positions = {
     1: 'top left',
@@ -31,7 +39,9 @@ angular.module('UI.controller', [])
   $scope.addShape = function(shape) {
     console.log('you\'ve got a', shape);
     if (shape === 'circle') {
-      console.log('round');
+      var result = makeSVG('circle', {'cy': '200', 'cx': '200', 'fill': 'red', 'r': '50'});
+      document.getElementById('svg-wrapper').append(result);
+      console.log('come on', result);
     } else if (shape === 'triangle') {
       console.log('nice');
     } else if (shape === 'square') {
@@ -39,7 +49,9 @@ angular.module('UI.controller', [])
     }
   };
 
-
+  $scope.randomColor = function(ele) {
+    document.getElementById(ele).value = Colors.hex();
+  };
 
   $scope.test = function(data) {
 
