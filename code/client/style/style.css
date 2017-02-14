@@ -59,10 +59,26 @@ input {
 }
 
 td {
+  width: 120px;
   padding-bottom: 5px;
 }
 
 .userForm {
-  width: 300px;
+  text-align: center;
+  width: 250px;
   margin: auto;
+  padding: 25px;
+  padding-bottom: 50px;
+  border: lightgrey 1px solid;
+  border-radius: 15px;
+}
+
+.userForm table {
+  text-align: center;
+  width: 250px;
+  margin: auto;
+}
+
+.userForm td {
+  text-align: left;
 }

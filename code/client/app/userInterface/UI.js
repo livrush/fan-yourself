@@ -1,8 +1,10 @@
 angular.module('logoer.UI', [])
-.controller('UIControl', function($scope, Colors) {
+.controller('UIControl', function($scope, Colors, Shapes) {
   $scope.test = function(data) {
-    console.log(data || 'You did it');
+    console.log(data || 'Error: supplied data is undefined');
   };
+
+  $scope.shapesCache = [];
 
   $scope.colors = [
     Colors.hex(),
@@ -44,17 +46,16 @@ angular.module('logoer.UI', [])
     9: 'bottom right'
   };
 
+
+
   $scope.addShape = function(shape) {
-    console.log('you\'ve got a', shape);
-    if (shape === 'circle') {
-      var result = makeSVG('circle', {'cy': '200', 'cx': '200', 'fill': 'red', 'r': '50'});
-      document.getElementById('svg-wrapper').append(result);
-      console.log('come on', result);
-    } else if (shape === 'triangle') {
-      console.log('nice');
-    } else if (shape === 'square') {
-      console.log('lame');
-    }
+    $scope.shapesCache.push(`${$scope.shapesCache.length + 1} ${shape}`);
+    Shapes.add(shape);
+  };
+
+  $scope.removeShape = function(index) {
+    // document.getElementsByTagName('svg')[0].children[index].remove();
+    Shapes.del(index);
   };
 
   $scope.randomColor = function(ele) {

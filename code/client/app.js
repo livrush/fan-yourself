@@ -1,5 +1,5 @@
 angular.module('logoer', [
-  'logoer.fact',
+  'logoer.services',
   'logoer.UI',
   'logoer.auth',
   'ngRoute',

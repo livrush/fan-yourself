@@ -28,6 +28,10 @@
         <td><button ng-click="addShape(selectedShape)">Add Shape</button></td>
       </tr>
       <tr>
+        <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesCache" value="{{shape}}"></select></td>
+        <td><button ng-click="removeShape(selectedCache)">Delete Shape</button></td>
+      </tr>
+      <tr>
         <td><select id="pos" ng-model="selectedPosition" value="{{pos}}" ng-options="pos for (key, pos) in positions"></select></td>
         <td><button ng-click="positionShape(selectedPosition)">Position shape</button></td>
       </tr>
