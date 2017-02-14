@@ -6,13 +6,6 @@ angular.module('logoer.UI', [])
 
   $scope.shapesCache = [];
 
-  $scope.colors = [
-    Colors.hex(),
-    Colors.hex(),
-    Colors.hex(),
-    Colors.hex(),
-  ];
-
   $scope.shapes = [
     'triangle',
     'square',
@@ -46,16 +39,15 @@ angular.module('logoer.UI', [])
     9: 'bottom right'
   };
 
-
-
   $scope.addShape = function(shape) {
-    $scope.shapesCache.push(`${$scope.shapesCache.length + 1} ${shape}`);
     Shapes.add(shape);
+    $scope.shapesCache.push(shape);
   };
 
-  $scope.removeShape = function(index) {
-    // document.getElementsByTagName('svg')[0].children[index].remove();
-    Shapes.del(index);
+  $scope.removeShape = function() {
+    let i = document.getElementById('deleteShape').selectedIndex;
+    Shapes.del(i);
+    $scope.shapesCache.splice(i, 1);
   };
 
   $scope.randomColor = function(ele) {

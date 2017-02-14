@@ -5,7 +5,7 @@ let index = () => Math.floor(Math.random() * 16);
 
 let hex = () => bits[index()];
 
-let randomColor = function() {
+let randomHex = function() {
   let color = '#';
   for (var i = 0; i < 6; i++) {
     color += hex();

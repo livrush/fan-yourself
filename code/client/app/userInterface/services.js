@@ -1,6 +1,6 @@
 angular.module('logoer.services', [])
 .factory('Colors', function() {
-  let hex = () => randomColor();
+  let hex = () => randomHex();
 
   return {
     hex: hex
@@ -10,10 +10,10 @@ angular.module('logoer.services', [])
 .factory('Shapes', function() {
   let add = function(shape) {
     if (shape === 'circle') {
-      var shape = makeSVG(shape, {'cy': '200', 'cx': '200', 'fill': 'red', 'r': '50'});
+      var shape = makeSVG(shape, {'cy': '200', 'cx': '200', 'fill': randomHex(), 'r': '50'});
       document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'square') {
-      var shape = makeSVG('rect', {'x': '200', 'y': '200', 'fill': 'yellow', 'width': '150', 'height': '150'});
+      var shape = makeSVG('rect', {'x': '200', 'y': '200', 'fill': randomHex(), 'width': '150', 'height': '150'});
       document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'triangle') {
 
@@ -25,8 +25,7 @@ angular.module('logoer.services', [])
   };
 
   let del = function(index) {
-    i = index[0] - 1;
-    document.getElementsByTagName('svg')[0].children[i].remove();
+    document.getElementsByTagName('svg')[0].children[index].remove();
   };
 
   return {
