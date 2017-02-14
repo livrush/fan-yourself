@@ -23,9 +23,13 @@ angular.module('logoer.UI', [])
   $scope.fonts = [
     'Arial',
     'Helvetica',
+    'Futura',
     'Times',
-    'Comic Sans',
-    'Papyrus'
+    'Comic Sans MS',
+    'Papyrus',
+    'Courier New',
+    'Arial Black',
+    'Impact'
   ].sort();
 
   $scope.positions = {
@@ -57,10 +61,8 @@ angular.module('logoer.UI', [])
     document.getElementById(ele).value = Colors.hex();
   };
 
-  $scope.randomColor = function(font) {
-    console.log(font);
+  $scope.changeFont = function(font) {
+    document.getElementById('mainText').style.fontFamily = font;
   };
 
 });
-
-console.log('controller');

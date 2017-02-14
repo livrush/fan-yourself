@@ -42,6 +42,7 @@ nav li {
 }
 
 #control {
+  border-radius: 25px;
   height:400px;
   width:250px;
   padding: 25px;

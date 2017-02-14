@@ -13,7 +13,7 @@
       </tr>
       <tr>
         <td>Font:</td>
-        <td><select id="font" ng-model="selectedFont" ng-click="changeFont(selectedFont)" ng-options="font for font in fonts"></select></td>
+        <td><select id="font" ng-model="selectedFont" ng-switch="changeFont(selectedFont)" ng-options="font for font in fonts"></select></td>
       </tr>
       <tr>
         <td>Color:</td>
@@ -43,6 +43,6 @@
   <div id="canvas">
     <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
     </svg>
-    <div id="mainText">{{ logoText }}</div>
+    <div id="mainText">Logo Text {{ logoText }}</div>
   </div>
 </div>
