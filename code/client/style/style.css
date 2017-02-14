@@ -43,7 +43,7 @@ nav li {
 
 #control {
   border-radius: 25px;
-  height:400px;
+  height:500px;
   width:250px;
   padding: 25px;
   background: #ffafaf;
@@ -51,15 +51,15 @@ nav li {
 }
 
 select, button {
-  width: 120px;
+  width: 100px;
 }
 
 input {
-  width: 114px;
+  width: 94px;
 }
 
 td {
-  width: 120px;
+  width: 100px;
   padding-bottom: 5px;
 }
 
@@ -73,17 +73,81 @@ td {
   border-radius: 15px;
 }
 
+.formName {
+  display: flex;
+  justify-content: space-around;;
+  margin-bottom: 15px;
+}
+
 .userForm table {
+  background: black;
   text-align: center;
   width: 250px;
   margin: auto;
 }
 
+
+
 .userForm td {
   text-align: left;
 }
 
-#hexColor {
+#hexColor, #textColor {
   background: url('../assets/input.png') repeat-y;
-  background-color: white;
+  background-color: black;
+}
+
+.button-row button {
+  width: 52px;
+}
+
+tr {
+  background: white;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+table, th, td {
+    border: 1px solid transparent;
+}
+
+td {
+  padding: 12px;
+}
+
+th {
+  background-color: #ffafaf;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+#shapeHeader {
+  background: white;
+}
+
+.colorSquare {
+  height: 20px;
+  width: 20px;
+  border-radius: 10px;
+  background-color: black;
+}
+
+.colorRow {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.lastRow {
+  height: 45px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }

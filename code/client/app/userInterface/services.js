@@ -21,8 +21,13 @@ angular.module('logoer.services', [])
     }
   };
 
+  let del = function() {
+    document.getElementsByClassName('colorRow')[0].children[0].remove();
+  };
+
   return {
     hex: hex,
-    change: change
+    change: change,
+    del: del
   };
 });

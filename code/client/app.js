@@ -8,7 +8,6 @@ angular.module('logoer', [
   'ngMessages',
 ])
 .config( function ($routeProvider) {
-  console.log('wtf');
   $routeProvider
   .when('/maker', {
     templateUrl: 'app/userInterface/UI.html',

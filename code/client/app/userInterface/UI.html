@@ -2,16 +2,18 @@
 <div id="container" ng-app="logoer" ng-controller="UIControl">
   <form id="control">
 
-    <table>
+
       <!-- NAME INPUT -->
-      <tr>
-        <td>Name:</td>
-        <td><input id="logoName" type="text" value="" placeholder="of your brand"></td>
-      </tr>
+    <div class="formName">
+      <td>Name:</td>
+      <td><input id="logoName" type="text" value="" placeholder="of your brand"></td>
+    </div>
+
+    <table>
       <!-- TYPE INPUT -->
-      <tr>
-        <td id="textHeader" ng-click="formChange(true)"><a href="">Text</a></td>
-        <td id="shapeHeader" ng-click="formChange(false)"><a href="">Shape</a></td>
+      <tr class="type-row">
+        <th id="textHeader" ng-click="formChange(true)"><a href="">Text</a></th>
+        <th id="shapeHeader" ng-click="formChange(false)"><a href="">Shape</a></th>
       </tr>
       <!-- TEXT INPUT -->
       <tr ng-show="type">
@@ -30,9 +32,13 @@
         <td>Color:</td>
         <td><input id="textColor" ng-model="color" type="text" ng-keyup="changeColor()" placeholder="Try random sometime!"></td>
       </tr>
-      <tr ng-show="type">
-        <td><button ng-click="randomColor()">Random color</button></td>
-        <td><button ng-click="setTextColor(color)">Set</button></td>
+      <tr ng-show="type" class="button-row">
+        <td colspan="2">
+          <button ng-model="prevColor" ng-click="previousColor()">Prev</button>
+          <button ng-click="randomColor()">Random</button>
+          <button ng-click="saveColor(color)">Save</button>
+          <button ng-click="setTextColor(color)">Set</button>
+        </td>
       </tr>
       <!-- SHAPE INPUT -->
       <tr ng-show="!type">
@@ -51,7 +57,7 @@
       </tr>
       <!-- SHAPE REMOVAL -->
       <tr ng-show="!type">
-          <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesCache" value="{{shape}}"></select></td>
+          <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesList" value="{{shape}}"></select></td>
         <td><button ng-click="removeShape(selectedCache)">Delete Shape</button></td>
       </tr>
       <!-- COLOR INPUT -->
@@ -59,9 +65,21 @@
         <td>Color:</td>
         <td><input id="hexColor" ng-model="color" type="text" ng-keyup="changeColor()" placeholder="Try random sometime!"></td>
       </tr>
-      <tr ng-show="!type">
-        <td><button ng-click="randomColor()">Random color</button></td>
-        <td><button ng-click="setColor(color)">Set</button></td>
+      <tr ng-show="!type" class="button-row">
+        <td colspan="2">
+          <button ng-model="prevColor" ng-click="previousColor()">Prev</button>
+          <button ng-click="randomColor()">Random</button>
+          <button ng-click="saveColor(color)">Save</button>
+          <button ng-click="setColor(color)">Set</button>
+        </td>
+      </tr>
+      <!-- COLORS ROW -->
+      <tr>
+        <td colspan="2" class="lastRow">
+          <ul class="colorRow">
+            <li class="colorSquare" ng-repeat="color in colorsCache track by $index" ng-style="{'background-color': color}" ng-click="changeColor(color)"></li>
+          </ul>
+        </td>
       </tr>
     </table>
 

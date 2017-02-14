@@ -1,33 +1,30 @@
 angular.module('logoer.shapes', [])
 .factory('Shapes', function() {
-  let add = function(shape, color, x, y, r) {
+  let add = function(shape, color, y, x, r) {
+    var shape;
     if (shape === 'circle') {
       color = color || randomHex();
-      var shape = makeSVG(shape, {'cy': y, 'cx': x, 'fill': color, 'r': r});
+      shape = makeSVG(shape, {'cy': y, 'cx': x, 'fill': color, 'r': r});
       document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'square') {
-      var shape = makeSVG('rect', {'x': x - r, 'y': y - r, 'fill': color, 'width': r * 2, 'height': r * 2});
+      shape = makeSVG('rect', {'x': x - r, 'y': y - r, 'fill': color, 'width': r * 2, 'height': r * 2});
       document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'tall rect') {
-      var shape = makeSVG('rect', {'x': x - r, 'y': y - r * 1.5, 'fill': color, 'width': r * 2, 'height': r * 3});
+      shape = makeSVG('rect', {'x': x - r, 'y': y - r * 1.5, 'fill': color, 'width': r * 2, 'height': r * 3});
       document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'wide rect') {
-      var shape = makeSVG('rect', {'x': x - r * 1.5, 'y': y - r, 'fill': color, 'width': r * 3, 'height': r * 2});
+      shape = makeSVG('rect', {'x': x - r * 1.5, 'y': y - r, 'fill': color, 'width': r * 3, 'height': r * 2});
       document.getElementById('svg-wrapper').append(shape);
-    } else if (shape === 'triangle') {
-      var shape = makeSVG('rect', {'x': '200', 'y': '200', 'fill': color, 'width': '150', 'height': '150'});
-      document.getElementById('svg-wrapper').append(shape);
-    } else if (shape === 'heart') {
-      var shape = makeSVG('rect', {'x': '100', 'y': '100', 'fill': color, 'width': '50', 'height': '25'});
-      document.getElementById('svg-wrapper').append(shape);
-    } else if (shape === 'pentagon') {
-      var shape = makeSVG('rect', {'x': '200', 'y': '200', 'fill': color, 'width': '150', 'height': '150'});
+    } else if (shape === 'diamond') {
+      shape = makeSVG('rect', {'fill': color, 'width': r * 2, 'height': r * 2, transform: `rotate(45, ${x}, ${y})`});
+      // shape.style.transform = 'rotate(7deg)';
       document.getElementById('svg-wrapper').append(shape);
     }
   };
 
   let del = function(index) {
     document.getElementsByTagName('svg')[0].children[index].remove();
+    document.getElementsByClassName('colorRow')[0].children[0].remove();
   };
 
   let position = function(choice) {
