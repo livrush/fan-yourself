@@ -7,6 +7,10 @@
   background: url('../assets/checker.png');
 }
 
+.container {
+  display: block;
+}
+
 #mainText {
   position: absolute;
   margin:auto;
@@ -15,4 +19,8 @@
   color: white;
   font-size: 50px;
   top: 200px;
+}
+
+#nameText {
+  text-align: right;
 }

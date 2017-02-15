@@ -6,7 +6,7 @@
       <!-- NAME INPUT -->
     <div class="formName">
       <td>Name:</td>
-      <td><input id="logoName" type="text" value="" placeholder="of your brand"></td>
+      <td><input id="logoName" type="text" ng-model="name" placeholder="of your brand"></td>
     </div>
 
     <table>
@@ -83,12 +83,15 @@
       </tr>
     </table>
 
-    <button action="POST" >SAVE</button>
+    <button type="submit" ng-click="save()">SAVE</button>
   </form>
 
-  <div id="canvas">
-    <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg">
-    </svg>
-    <div id="mainText" ng-click="test('mainText')">{{ logoText }}</div>
+  <div class="container">
+    <div id="canvas">
+      <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+      <div id="mainText" ng-click="test('mainText')">{{ logoText }}</div>
+    </div>
+    <h2 id="nameText">{{ name }}</h2>
   </div>
+
 </div>

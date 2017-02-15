@@ -7,8 +7,9 @@ angular.module('logoer', [
   'ngDragDrop',
   'ngRoute',
   'ngMessages',
+  'ng-token-auth'
 ])
-.config( function ($routeProvider) {
+.config( function ($routeProvider, $authProvider) {
   $routeProvider
   .when('/maker', {
     templateUrl: 'app/userInterface/UI.html',
@@ -25,4 +26,11 @@ angular.module('logoer', [
   .otherwise({
     redirectTo: '/maker'
   });
+  $authProvider.configure({
+    apiUrl: 'http://api.example.com',
+    storage: 'cookies',
+  });
+})
+.controller('Navigation', function() {
+
 });

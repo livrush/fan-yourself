@@ -6,19 +6,36 @@ angular.module('logoer.auth', [])
     password: 'asdf'
   };
 
+  $scope.signedIn = false;
   $scope.username = false;
   $scope.email = false;
   $scope.password = false;
 
   $scope.signin = function () {
     Auth.signin($scope.user)
-      .then(function (token) {
-        $window.localStorage.setItem('com.shortly', token);
-        $location.path('/links');
-      })
-      .catch(function (error) {
-        console.error(error);
-      });
+    .then(function (data) {
+      // $window.localStorage.setItem('com.logoer', token);
+      $scope.signedIn = true;
+      $window.username = 'Hold';
+      $location.path('/maker');
+    })
+    .catch(function (error) {
+      console.log(error);
+      switch (error.data) {
+      case 'username':
+        $scope.username = true;
+        break;
+      case 'email':
+        $scope.username = false;
+        $scope.email = true;
+        break;
+      case 'password':
+        $scope.username = false;
+        $scope.email = false;
+        $scope.password = true;
+        break;
+      }
+    });
   };
 
   $scope.signup = function (user) {
@@ -29,7 +46,7 @@ angular.module('logoer.auth', [])
       })
       .catch(function (error) {
         console.log(error);
-        switch(error.data) {
+        switch (error.data) {
         case 'email':
           $scope.username = false;
           $scope.email = true;
@@ -38,9 +55,6 @@ angular.module('logoer.auth', [])
           $scope.username = true;
           break;
         }
-
       });
   };
-
-
 });

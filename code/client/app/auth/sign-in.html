@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <div class="userForm">
   <h1>SIGN IN</h1>
-  <form name="signIn">
+  <form name="signIn" ng-submit="signin(user)">
     <table>
       <tr>
         <td>Username:</td>
@@ -13,12 +13,16 @@
       </tr>
       <tr>
         <td>Password:</td>
-        <td><input type="password" ng-model="user.password" ng-minlength="5" ng-maxlength="20" required></td>
+        <td><input type="password" ng-model="user.password" ng-minlength="3" ng-maxlength="20" required></td>
       </tr>
     </table>
-    <div ng-messages="signIn.$error" class="error" role="alert">
-      <div ng-message="minlength maxlength">Password must be 5-20 characters</div>
+
+    <button type="submit">Submit</button>
+
+    <div ng-messages="signUp.$error" class="error" role="alert">
+      <div ng-show="username">That username isn't registered</div>
+      <div ng-show="email">That email isn't registered</div>
+      <div ng-show="email">Your password is incorrect</div>
     </div>
-    <button type="submit" method="POST">Submit</button>
   </form>
 </div>

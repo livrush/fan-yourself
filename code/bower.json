@@ -18,6 +18,7 @@
     "angular": "^1.5.6",
     "Snap.svg": "snap.svg#^0.5.1",
     "express": "^4.14.1",
-    "angular-dragdrop": "^1.0.13"
+    "angular-dragdrop": "^1.0.13",
+    "ng-token-auth": "^0.0.29"
   }
 }

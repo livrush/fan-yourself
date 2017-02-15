@@ -14,8 +14,15 @@ angular.module('logoer.forms', [])
   };
 
   let signin = function(user) {
-    console.log(user);
-
+    return $http({
+      method: 'POST',
+      url: '/signin',
+      data: user
+    })
+    .then(function (resp) {
+      console.log(resp.data);
+      return resp;
+    });
   };
 
   return {

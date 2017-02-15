@@ -10,7 +10,9 @@ angular.module('logoer.UI', [])
   $scope.colorsCache = [];
 
   // PRESET VALUES
-  $scope.type = false;
+  $scope.name;
+  $scope.logoText;
+  $scope.type = true;
   $scope.color = '#000000';
   $scope.prevColor = '#000000';
   $scope.savedColor = '#000000';
@@ -133,6 +135,17 @@ angular.module('logoer.UI', [])
       }
       $scope.colorsCache.push(color);
     }
+  };
+
+  $scope.save = function() {
+    let logo = {};
+    let text = document.getElementById('canvas').children[1];
+    logo.name = $scope.name;
+    logo.design = document.getElementById('canvas').children[0].outerHTML;
+    // logo.text = $scope.logoText;
+    logo.text = text.innerText;
+    logo.textStyle = text.style;
+    console.log(logo.text);
   };
 
 });
