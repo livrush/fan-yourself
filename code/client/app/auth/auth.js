@@ -6,6 +6,10 @@ angular.module('logoer.auth', [])
     password: 'asdf'
   };
 
+  $scope.username = false;
+  $scope.email = false;
+  $scope.password = false;
+
   $scope.signin = function () {
     Auth.signin($scope.user)
       .then(function (token) {
@@ -19,12 +23,22 @@ angular.module('logoer.auth', [])
 
   $scope.signup = function (user) {
     Auth.signup($scope.user)
-      .then(function () {
+      .then(function (data) {
         // $window.localStorage.setItem('com.logoer', token);
         $location.path('/maker');
       })
       .catch(function (error) {
-        console.error(error);
+        console.log(error);
+        switch(error.data) {
+        case 'email':
+          $scope.username = false;
+          $scope.email = true;
+          break;
+        case 'username':
+          $scope.username = true;
+          break;
+        }
+
       });
   };
 

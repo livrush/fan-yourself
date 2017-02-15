@@ -8,8 +8,6 @@ const PORT = process.env.PORT;
 const MONGOURI = process.env.MONGOURI;
 let db;
 
-
-
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
@@ -23,11 +21,39 @@ MongoClient.connect(MONGOURI, (err, database) => {
   });
 });
 
-app.post('/signup', (req, res) => {
-  console.log(req.body);
-  db.collection('users').save(req.body, (err, result) => {
-    if (err) { return console.log(err); }
-    console.log('saved to database');
-    res.redirect('#/match');
+app.post('/signup', function(req, res) {
+  let username = req.body.username;
+  let email = req.body.email;
+  db.collection('users').find({username: username}).toArray(function(err, docs) {
+    if (docs[1]) {
+      console.log('We have a user named that already');
+      res.status(403).send('username');
+    } else {
+      db.collection('users').find({email: email}).toArray(function(err, docs) {
+        if (docs[1]) {
+          console.log('That email is currently in use');
+          res.status(403).send('email');
+        } else {
+          db.collection('users').save(req.body, (err, result) => {
+            if (err) { return console.log(err); }
+            console.log('saved to database');
+            res.status(201).send('/maker');
+          });
+        }
+      });
+    }
   });
+});
+
+app.get('/signup', function(req, res) {
+  console.log(req);
+  db.collection('users').find({username: 'asdf'}).toArray(function(err, docs) {
+    console.log(docs[0]);
+    db.close();
+  });
+  // db.collection('users').findOne(req.body, (err, result) => {
+  //   if (err) { return console.log(err); }
+  //   console.log('saved to database');
+  //   res.redirect('#/match');
+  // });
 });

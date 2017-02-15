@@ -16,9 +16,13 @@
         <td><input type="password" ng-model="user.password" ng-minlength="3" ng-maxlength="20" required></td>
       </tr>
     </table>
+
+    <button type="submit">Submit</button>
+
     <div ng-messages="signUp.$error" class="error" role="alert">
+      <div ng-show="username">That username is already in use!</div>
+      <div ng-show="email">That email is already in use!</div>
       <div ng-message="minlength maxlength">Password must be 3-20 characters</div>
     </div>
-    <button type="submit">Submit</button>
   </form>
 </div>
