@@ -142,10 +142,9 @@ angular.module('logoer.UI', [])
     let text = document.getElementById('canvas').children[1];
     logo.name = $scope.name;
     logo.design = document.getElementById('canvas').children[0].outerHTML;
-    // logo.text = $scope.logoText;
     logo.text = text.innerText;
     logo.textStyle = text.style;
-    console.log(logo.text);
+    Shapes.save(logo);
   };
 
 });

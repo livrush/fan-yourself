@@ -1,5 +1,5 @@
 angular.module('logoer.shapes', [])
-.factory('Shapes', function() {
+.factory('Shapes', function($http) {
   let add = function(shape, color, y, x, r) {
     var shape;
     if (shape === 'circle') {
@@ -52,9 +52,23 @@ angular.module('logoer.shapes', [])
     return result;
   };
 
+  let save = function(logo) {
+    console.log(logo);
+    return $http({
+      method: 'POST',
+      url: 'api/logos',
+      data: logo
+    })
+    .then(function (resp) {
+      console.log(resp.data);
+      return resp;
+    });
+  };
+
   return {
     add: add,
     del: del,
-    position: position
+    position: position,
+    save: save
   };
 });

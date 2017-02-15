@@ -68,3 +68,12 @@ app.post('/signin', function(req, res) {
     }
   });
 });
+
+app.post('/api/logos', function(req, res) {
+  let logo = req.body;
+  db.collection('logos').save(logo, (err, result) => {
+    if (err) { return console.log(err); }
+    console.log('saved to database');
+    res.status(201).send('/maker');
+  });
+});

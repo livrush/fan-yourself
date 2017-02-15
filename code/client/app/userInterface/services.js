@@ -24,23 +24,9 @@ angular.module('logoer.services', [])
     document.getElementsByClassName('colorRow')[0].children[0].remove();
   };
 
-  let save = function(logo) {
-    console.log(logo);
-    return $http({
-      method: 'POST',
-      url: '/signup',
-      data: logo
-    })
-    .then(function (resp) {
-      console.log(resp.data);
-      return resp;
-    });
-  };
-
   return {
     hex: hex,
     change: change,
     del: del,
-    save: save
   };
 });
