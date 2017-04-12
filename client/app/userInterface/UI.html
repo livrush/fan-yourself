@@ -57,7 +57,7 @@
       </tr>
       <!-- SHAPE REMOVAL -->
       <tr ng-show="!type">
-          <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for shape in shapesList" value="{{shape}}"></select></td>
+          <td><select id="deleteShape" ng-model="selectedCache" ng-options="shape for (id, shape) in shapesList" value="{{id}} {{shape}}"></select></td>
         <td><button ng-click="removeShape(selectedCache)">Delete Shape</button></td>
       </tr>
       <!-- COLOR INPUT -->
@@ -84,9 +84,15 @@
     </table>
 
     <button type="submit" ng-click="save()">SAVE</button>
+
+    <div action="" class="backgroundChoice">Background <br>
+      <input class="radio" type="radio" name="formBack" ng-click="canvasChange(1)" checked="checked">Pattern
+      <input class="radio" type="radio" name="formBack" ng-click="canvasChange(2)">White
+      <input class="radio" type="radio" name="formBack" ng-click="canvasChange(3)">Black
+    </div>
   </form>
 
-  <div class="container">
+  <div class="block">
     <div id="canvas">
       <svg id="svg-wrapper" width="400" height="400" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
       <div id="mainText" ng-click="test('mainText')">{{ logoText }}</div>

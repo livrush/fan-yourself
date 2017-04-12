@@ -11,6 +11,7 @@ angular.module('logoer.UI', [])
 
   // PRESET VALUES
   $scope.name;
+  $scope.index = 0;
   $scope.logoText;
   $scope.type = true;
   $scope.color = '#000000';
@@ -22,21 +23,23 @@ angular.module('logoer.UI', [])
 
   $scope.formChange = function(bool) {
     $scope.type = bool;
-    if(bool) {
-      document.getElementById('textHeader').style.background = '#ffffff';
-      document.getElementById('shapeHeader').style.background = '#ffafaf';
+    if (bool) {
+      document.getElementById('textHeader').style.background = '#eeeeee';
+      document.getElementById('shapeHeader').style.background = '#bbbbbb';
     } else {
-      document.getElementById('textHeader').style.background = '#ffafaf';
-      document.getElementById('shapeHeader').style.background = '#ffffff';
+      document.getElementById('textHeader').style.background = '#bbbbbb';
+      document.getElementById('shapeHeader').style.background = '#eeeeee';
     }
+  };
+
+  $scope.canvasChange = function(num) {
+    Shapes.canvasChange(num);
   };
 
   $scope.types = [
     'text',
     'shape'
   ].sort();
-
-  // Next up is changing UI to specify between types!!!
 
   $scope.fonts = [
     'Arial',
@@ -82,17 +85,16 @@ angular.module('logoer.UI', [])
 
   $scope.addShape = function(shape) {
     let pos = Shapes.position($scope.selectedPosition);
-    Shapes.add(shape, $scope.savedColor, pos[0], pos[1], $scope.selectedSize);
-    // console.log(result);
-    // $scope.shapesCache.push(result);
+    Shapes.add(shape, $scope.index, $scope.savedColor, pos[0], pos[1], $scope.selectedSize);
     $scope.shapesList.push(shape);
+    $scope.index++;
   };
 
   $scope.removeShape = function() {
     let i = document.getElementById('deleteShape').selectedIndex;
     console.log(i);
     Shapes.del(i);
-    $scope.shapesCache.splice(i, 1);
+    $scope.shapesList.splice(i, 1);
     document.getElementById('deleteShape').selectedIndex = 0;
   };
 

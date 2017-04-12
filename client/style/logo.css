@@ -1,4 +1,5 @@
 #canvas {
+  border: #bbb solid 5px;
   border-radius: 25px;
   position:relative;
   height:400px;
@@ -7,8 +8,13 @@
   background: url('../assets/checker.png');
 }
 
-.container {
+.block {
   display: block;
+}
+
+.inline {
+  display: flex;
+  justify-content: space-between;
 }
 
 #mainText {
@@ -19,6 +25,16 @@
   color: white;
   font-size: 50px;
   top: 200px;
+}
+
+.radio {
+  width: 15px;
+}
+
+.backgroundChoice {
+  position: absolute;
+  bottom: 25px;
+  width: 250px;
 }
 
 #nameText {

@@ -1,6 +1,9 @@
 body {
+  /*background: #c5t
+  e4c9;*/
   font-family: sans-serif;
   margin: 0;
+  color: #3f2633;
 }
 
 h1 {
@@ -15,7 +18,7 @@ nav {
   font-family: futura;
   margin-bottom: 50px;
   padding: 10px;
-  background: #daaaad;
+  background: #eb9998;
   color: white;
 }
 
@@ -46,7 +49,7 @@ nav li {
   height:500px;
   width:250px;
   padding: 25px;
-  background: #ffafaf;
+  background: #bbbbbb;
   margin-right: 50px;
   text-align: center;
 }
@@ -102,12 +105,13 @@ td {
 }
 
 tr {
-  background: white;
+  background: #eeeeee;
 }
 
 table {
     border-collapse: collapse;
     margin-bottom: 15px;
+    width: 250px;
 }
 
 table, th, td {
@@ -119,7 +123,8 @@ td {
 }
 
 th {
-  background-color: #ffafaf;
+  width: 125px;
+  background-color: #bbbbbb;
   text-align: center;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -128,7 +133,7 @@ th {
 }
 
 #textHeader {
-  background: white;
+  background: #eeeeee;
 }
 
 .colorSquare {

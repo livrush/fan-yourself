@@ -1,31 +1,28 @@
 angular.module('logoer.shapes', [])
 .factory('Shapes', function($http) {
-  let add = function(shape, color, y, x, r) {
+  let add = function(shape, i, color, y, x, r) {
     var shape;
     if (shape === 'circle') {
       color = color || randomHex();
       shape = makeSVG(shape, {'cy': y, 'cx': x, 'fill': color, 'r': r});
-      document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'square') {
       shape = makeSVG('rect', {'x': x - r, 'y': y - r, 'fill': color, 'width': r * 2, 'height': r * 2});
-      document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'tall rect') {
       shape = makeSVG('rect', {'x': x - r, 'y': y - r * 1.5, 'fill': color, 'width': r * 2, 'height': r * 3});
-      document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'wide rect') {
       shape = makeSVG('rect', {'x': x - r * 1.5, 'y': y - r, 'fill': color, 'width': r * 3, 'height': r * 2});
-      document.getElementById('svg-wrapper').append(shape);
     } else if (shape === 'diamond') {
       shape = makeSVG('rect', {'fill': color, 'width': r * 2, 'height': r * 2, transform: `rotate(45, ${x}, ${y})`});
-      // shape.style.transform = 'rotate(7deg)';
-      document.getElementById('svg-wrapper').append(shape);
     }
+    shape.setAttribute('id', i);
+    document.getElementById('svg-wrapper').append(shape);
   };
 
   let del = function(index) {
     document.getElementsByTagName('svg')[0].children[index].remove();
-    document.getElementsByClassName('colorRow')[0].children[0].remove();
   };
+
+
 
   let position = function(choice) {
     let result;
@@ -65,10 +62,22 @@ angular.module('logoer.shapes', [])
     });
   };
 
+  let canvasChange = function(num) {
+    let canvas = document.getElementById('canvas');
+    if (num === 1) {
+      canvas.style.background = 'url(\'../assets/checker.png\')';
+    } else if (num === 2) {
+      canvas.style.background = 'white';
+    } else if (num === 3) {
+      canvas.style.background = 'black';
+    }
+  };
+
   return {
     add: add,
     del: del,
     position: position,
-    save: save
+    save: save,
+    canvasChange: canvasChange,
   };
 });
