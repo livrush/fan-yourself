@@ -4,7 +4,7 @@ angular.module('logoer', [
   'logoer.shapes',
   'logoer.UI',
   'logoer.auth',
-  'ngDragDrop',
+  // 'ngDragDrop',
   'ngRoute',
   'ngMessages',
   'ng-token-auth'
@@ -26,10 +26,10 @@ angular.module('logoer', [
   .otherwise({
     redirectTo: '/maker'
   });
-  $authProvider.configure({
-    apiUrl: 'http://api.example.com',
-    storage: 'cookies',
-  });
+  // $authProvider.configure({
+  //   apiUrl: 'http://api.example.com',
+  //   storage: 'cookies',
+  // });
 })
 .controller('Navigation', function() {
 

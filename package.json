@@ -9,7 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint ./*",
     "lint:watch": "watch 'npm run lint' .",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower install"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,6 @@
     "angular-messages": "^1.6.2",
     "angular-route": "^1.6.2",
     "body-parser": "^1.16.1",
-    "bower": "^1.8.0",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "mongodb": "^2.2.23",
