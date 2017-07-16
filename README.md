@@ -1,3 +1,3 @@
 # Fan Yourself
 
-[motherflockers](./client/assets/readme.png)
+![motherflockers](./client/assets/readme.png)
