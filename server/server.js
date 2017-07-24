@@ -17,7 +17,7 @@ MongoClient.connect(MONGOURI, (err, database) => {
   if (err) { return console.log(err); }
   db = database;
   app.listen(PORT, () => {
-    console.log('listening on 3000');
+    console.log('listening on 8080');
   });
 });
 

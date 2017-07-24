@@ -1,0 +1,21 @@
+@keyframes revolve { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+body {
+  background: blue;
+}
+
+#head {
+  position: absolute;
+  width: 200px;
+  animation: revolve 500ms linear infinite;
+}
+
+#body {
+  width: 200px;
+}
+
+.center {
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}

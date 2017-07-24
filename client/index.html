@@ -1,40 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Logoer</title>
-  <link rel="stylesheet" href="./style/style.css">
-  <link rel="stylesheet" href="./style/shapes.css">
-  <link rel="stylesheet" href="./style/logo.css">
+  <title>Fan Yourself</title>
+  <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
-<body ng-app="logoer">
+<body ng-app="fanYourself">
 
-  <nav ng-controller="AuthControl">
-    <h1><a href="/">Logoer</a></h1>
-    <ul id="account">
-      <li ng-show="signedIn"><a href="#/account">{{ username }}</a></li>
-      <li ng-show="signedIn"><a href="#/logout">Log Out</a></li>
-      <li ng-show="!signedIn"><a href="#/signin">Sign In</a></li>
-      <li ng-show="!signedIn"><a href="#/signup">Sign Up</a></li>
-    </ul>
-  </nav>
-
-  <div ng-view=""></div>
+  <app></app>
+  <div class="dark"></div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-messages.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-token-auth/0.0.29/ng-token-auth.js"></script>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
-  <script src="/library/angular-cookie/angular-cookie.js"></script>
-  <script src="./randomHex.js"></script>
-  <script src="./svg.js"></script>
-  <script src="./app/shapesFactory.js"></script>
-  <script src="./app/auth/authFactory.js"></script>
-  <script src="./app/userInterface/services.js"></script>
-  <script src="./app/userInterface/UI.js"></script>
-  <script src="./app/auth/auth.js"></script>
-  <script src="./app.js"></script>
+  <script src="./index.js"></script>
+  <script src="./components/app.js"></script>
+  <script src="./components/display.js"></script>
+  <script src="./components/ui.js"></script>
+  <!-- <script src="./components/create.js"></script> -->
 </body>
 </html>

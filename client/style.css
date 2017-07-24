@@ -1,0 +1,23 @@
+body {
+  background-image: url('./assets/backgrounds/franklin_ghost_town_trail_9_by_niedec_stock-da32np1.jpg');
+  background-size: cover;
+}
+
+#app {
+  display: flex;
+  position: absolute;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#display {
+  background: grey;
+  height: 400px;
+  width: 500px;
+}
+
+#ui {
+  background: lightgrey;
+  height: 400px;
+  width: 200px;
+}
