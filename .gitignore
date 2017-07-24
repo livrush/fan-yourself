@@ -30,6 +30,8 @@ bower_components/
 .env
 client/lib/
 
+.fullres/
+
 # Floobits
 .floo
 .floobit
