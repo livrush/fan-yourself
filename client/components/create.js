@@ -14,7 +14,7 @@ angular.module('video-player')
 
   youTube.search('javascript tutorial', this.searchResults);
 })
-/* END SOLUTION */
+ 
 .directive('app', function() {
   return {
     /* START SOLUTION */

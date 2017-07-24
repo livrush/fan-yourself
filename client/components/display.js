@@ -1,14 +1,16 @@
 fanYourself.controller('DisplayCtrl', function() {
   this.getBg = file => {
     return {
-      'background-image': `url(../assets/backgrounds/${file})`,
+      'background-image': `url(../assets/backgrounds/${file}.png)`,
     };
   };
 })
-/* END SOLUTION */
+
 .directive('display', function() {
   return {
     scope: {
+      about: '<',
+      ref: '<',
       bg: '<',
     },
     restrict: 'E',

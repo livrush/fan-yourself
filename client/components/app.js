@@ -1,18 +1,29 @@
 fanYourself.controller('AppCtrl', function() {
-  this.backgrounds = [
-    '0.png',
-    '1.png',
-    '2.png',
-    '3.png',
-    '4.png',
-    '5.png',
-    '6.png',
-  ];
+  this.about = false;
+  this.ref = false;
 
-  this.background = this.backgrounds[0];
+  this.backgrounds = 6;
+  this.background = 0;
+
+  this.updateBg = function(up) {
+    if (up) {
+      if (this.background < this.backgrounds) {
+        this.background++;
+      } else {
+        this.background = 0;
+      }
+    } else {
+      if (this.background > 0) {
+        this.background--;
+      } else {
+        this.background = this.backgrounds;
+      }
+    }
+    console.log(this.background);
+  }.bind(this);
 
 })
-/* END SOLUTION */
+
 .directive('app', function() {
   return {
     scope: {},

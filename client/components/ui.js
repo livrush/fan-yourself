@@ -1,13 +1,15 @@
 fanYourself.controller('UICtrl', function() {
 
 })
-/* END SOLUTION */
+
 .directive('ui', function() {
   return {
-    scope: {},
+    scope: {
+      ubg: '<',
+    },
     restrict: 'E',
     controller: 'UICtrl',
-    controllerAs: 'ctrl',
+    controllerAs: 'ui',
     bindToController: true,
     templateUrl: './templates/ui.html'
   };

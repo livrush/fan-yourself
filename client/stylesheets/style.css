@@ -87,9 +87,10 @@ body {
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
+  position: relative;
 }
 
-/* line 26, ../sass/style.scss */
+/* line 27, ../sass/style.scss */
 #display {
   background-position: center;
   background-color: black;
@@ -98,7 +99,7 @@ body {
   width: 500px;
 }
 
-/* line 36, ../sass/style.scss */
+/* line 37, ../sass/style.scss */
 #ui {
   background: #222;
   height: 500px;
@@ -107,12 +108,12 @@ body {
   text-align: center;
   font-weight: bold;
 }
-/* line 44, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 #ui h1 {
   font-size: 25px;
 }
 
-/* line 49, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .dark {
   position: absolute;
   width: 100%;
@@ -120,4 +121,14 @@ body {
   background: black;
   opacity: 0.7;
   z-index: -1;
+}
+
+/* line 59, ../sass/style.scss */
+#motherflocker {
+  background: red;
+  position: absolute;
+  left: 100px;
+  bottom: 50px;
+  height: 400px;
+  width: 200px;
 }
