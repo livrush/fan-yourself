@@ -67,23 +67,53 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 8, ../sass/style.scss */
+@keyframes revolve {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+/* line 10, ../sass/style.scss */
 body {
   background-image: url("../assets/bg.jpg");
   background-size: cover;
   color: #ddd;
   text-align: center;
 }
-/* line 13, ../sass/style.scss */
+/* line 15, ../sass/style.scss */
+body * {
+  box-sizing: border-box;
+}
+/* line 18, ../sass/style.scss */
 body h1 {
   font-size: 30px;
+  font-weight: bold;
 }
-/* line 16, ../sass/style.scss */
+/* line 22, ../sass/style.scss */
 body h2 {
   font-size: 25px;
 }
+/* line 25, ../sass/style.scss */
+body h3 {
+  font-size: 20px;
+}
+/* line 28, ../sass/style.scss */
+body a {
+  color: #777;
+}
+/* line 31, ../sass/style.scss */
+body button {
+  border: 0;
+  border-radius: 5px;
+  color: #222;
+  font-size: 1em;
+  font-weight: bold;
+  background: #777;
+  margin: 5px;
+  cursor: pointer;
+}
 
-/* line 21, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 #app {
   display: flex;
   position: absolute;
@@ -92,15 +122,16 @@ body h2 {
   transform: translate(-50%, -50%);
 }
 
-/* line 28, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 .container, #display, #ui {
   margin: 10px;
   padding: 10px;
   border-radius: 15px;
   position: relative;
+  overflow: hidden;
 }
 
-/* line 35, ../sass/style.scss */
+/* line 58, ../sass/style.scss */
 #display {
   background-position: center;
   background-color: black;
@@ -110,7 +141,7 @@ body h2 {
   box-shadow: 1px 5px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* line 46, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 #ui {
   background: #222;
   height: 500px;
@@ -118,7 +149,7 @@ body h2 {
   font-weight: bold;
 }
 
-/* line 54, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 .dark, .overlay {
   position: absolute;
   top: 0;
@@ -129,25 +160,47 @@ body h2 {
   background-image: url("../assets/b.png");
 }
 
-/* line 64, ../sass/style.scss */
-#motherflocker {
-  background: red;
+/* line 87, ../sass/style.scss */
+#fan {
   position: absolute;
-  left: 100px;
-  bottom: 50px;
-  height: 400px;
-  width: 200px;
+  top: 110px;
+  left: 150px;
+}
+/* line 94, ../sass/style.scss */
+#fan #head {
+  position: absolute;
+  width: 100px;
+  animation: revolve 500ms linear infinite;
+}
+/* line 100, ../sass/style.scss */
+#fan #body {
+  width: 100px;
 }
 
-/* line 73, ../sass/style.scss */
+/* line 105, ../sass/style.scss */
+#motherflocker {
+  background-image: url("../assets/bodies/2.png");
+  background-size: cover;
+  position: absolute;
+  left: 100px;
+  bottom: 25px;
+  height: 300px;
+  width: 180px;
+}
+
+/* line 115, ../sass/style.scss */
 .overlay {
   z-index: 1;
   border-radius: 15px;
+  padding: 20px;
+  width: 500px;
+  box-sizing: border-box;
 }
 
-/* line 79, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 .close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
 }
