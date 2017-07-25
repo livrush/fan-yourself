@@ -1,10 +1,22 @@
 fanYourself.controller('AppCtrl', function() {
+
+  // TEXT OVERLAYS
   this.about = false;
   this.ref = false;
+  this.show = function(target) {
+    this.about = false;
+    this.ref = false;
+    this[target] = true;
+    console.log('app', this[target]);
+  }.bind(this);
+  this.close = function() {
+    this.about = false;
+    this.ref = false;
+  }.bind(this);
 
+  // ALTERING BACKGROUNDS
   this.backgrounds = 6;
   this.background = 0;
-
   this.updateBg = function(up) {
     if (up) {
       if (this.background < this.backgrounds) {
@@ -21,9 +33,7 @@ fanYourself.controller('AppCtrl', function() {
     }
     console.log(this.background);
   }.bind(this);
-
 })
-
 .directive('app', function() {
   return {
     scope: {},

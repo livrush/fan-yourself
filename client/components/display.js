@@ -10,6 +10,7 @@ fanYourself.controller('DisplayCtrl', function() {
   return {
     scope: {
       about: '<',
+      close: '<',
       ref: '<',
       bg: '<',
     },
