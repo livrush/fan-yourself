@@ -13,6 +13,7 @@ fanYourself.controller('DisplayCtrl', function() {
       close: '<',
       ref: '<',
       bg: '<',
+      mf: '<'
     },
     restrict: 'E',
     controller: 'DisplayCtrl',

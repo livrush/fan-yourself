@@ -1,5 +1,7 @@
-<div id="mf-fan">
+<div id="mf-fan" ng-style="mf.mfFan(mf.mfBodies[mf.mf])">
   <img class="head" src="../assets/fan/1.png" alt="">
   <img class="body" src="../assets/fan/body.png" alt="">
 </div>
-<div id="mf-body"></div>
+<div id="mf-body">
+  <img class="body" src="../assets/bodies/{{mf.mfBodies[mf.mf].body}}.png" alt="">
+</div>

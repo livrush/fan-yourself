@@ -6,6 +6,7 @@ fanYourself.controller('UICtrl', function() {
   return {
     scope: {
       ubg: '<',
+      umf: '<',
       show: '<',
     },
     restrict: 'E',

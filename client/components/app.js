@@ -1,9 +1,10 @@
-fanYourself.controller('AppCtrl', function() {
+fanYourself.controller('AppCtrl', function(MotherflockerFact) {
 
-  var update = function(what, whats) {
+  var update = function(what) {
     return function(up) {
+      console.log(this)
       if (up) {
-        if (this[what] < this[whats]) {
+        if (this[what] < this[what + 's']) {
           this[what]++;
         } else {
           this[what] = 0;
@@ -12,7 +13,7 @@ fanYourself.controller('AppCtrl', function() {
         if (this[what] > 0) {
           this[what]--;
         } else {
-          this[what] = this[whats];
+          this[what] = this[what + 's'];
         }
       }
     };
@@ -38,7 +39,8 @@ fanYourself.controller('AppCtrl', function() {
   this.updateBg = update('background', 'backgrounds').bind(this);
 
   // ALTERING MOTHERFLOCKERS
-  this.motherflockers = 6;
+  this.mfs = MotherflockerFact.bodies;
+  this.motherflockers = this.mfs.length - 1;
   this.motherflocker = 0;
   this.updateMf = update('motherflocker', 'motherflockers').bind(this);
 })
