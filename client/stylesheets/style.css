@@ -160,35 +160,36 @@ body button {
   background-image: url("../assets/b.png");
 }
 
-/* line 87, ../sass/style.scss */
-#fan {
+/* line 88, ../sass/style.scss */
+motherflocker #mf-fan {
   position: absolute;
   top: 110px;
   left: 150px;
 }
-/* line 94, ../sass/style.scss */
-#fan #head {
+/* line 95, ../sass/style.scss */
+motherflocker #mf-fan .head {
   position: absolute;
   width: 100px;
-  animation: revolve 500ms linear infinite;
+  animation: revolve 1000ms linear infinite;
 }
-/* line 100, ../sass/style.scss */
-#fan #body {
+/* line 101, ../sass/style.scss */
+motherflocker #mf-fan .body {
   width: 100px;
 }
-
-/* line 105, ../sass/style.scss */
-#motherflocker {
-  background-image: url("../assets/bodies/2.png");
+/* line 106, ../sass/style.scss */
+motherflocker #mf-body {
   background-size: cover;
   position: absolute;
   left: 100px;
   bottom: 25px;
+}
+/* line 111, ../sass/style.scss */
+motherflocker #mf-body .body {
   height: 300px;
   width: 180px;
 }
 
-/* line 115, ../sass/style.scss */
+/* line 118, ../sass/style.scss */
 .overlay {
   z-index: 1;
   border-radius: 15px;
@@ -197,7 +198,7 @@ body button {
   box-sizing: border-box;
 }
 
-/* line 124, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 .close {
   position: absolute;
   top: 10px;

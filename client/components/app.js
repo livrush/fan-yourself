@@ -1,5 +1,23 @@
 fanYourself.controller('AppCtrl', function() {
 
+  var update = function(what, whats) {
+    return function(up) {
+      if (up) {
+        if (this[what] < this[whats]) {
+          this[what]++;
+        } else {
+          this[what] = 0;
+        }
+      } else {
+        if (this[what] > 0) {
+          this[what]--;
+        } else {
+          this[what] = this[whats];
+        }
+      }
+    };
+  };
+
   // TEXT OVERLAYS
   this.about = false;
   this.ref = false;
@@ -15,24 +33,14 @@ fanYourself.controller('AppCtrl', function() {
   }.bind(this);
 
   // ALTERING BACKGROUNDS
-  this.backgrounds = 6;
+  this.backgrounds = 11;
   this.background = 0;
-  this.updateBg = function(up) {
-    if (up) {
-      if (this.background < this.backgrounds) {
-        this.background++;
-      } else {
-        this.background = 0;
-      }
-    } else {
-      if (this.background > 0) {
-        this.background--;
-      } else {
-        this.background = this.backgrounds;
-      }
-    }
-    console.log(this.background);
-  }.bind(this);
+  this.updateBg = update('background', 'backgrounds').bind(this);
+
+  // ALTERING MOTHERFLOCKERS
+  this.motherflockers = 6;
+  this.motherflocker = 0;
+  this.updateMf = update('motherflocker', 'motherflockers').bind(this);
 })
 .directive('app', function() {
   return {
