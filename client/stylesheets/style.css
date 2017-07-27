@@ -168,7 +168,7 @@ motherflocker #mf-fan {
 motherflocker #mf-fan .head {
   position: absolute;
   width: 100px;
-  animation: revolve 1000ms linear infinite;
+  animation: revolve 500ms linear infinite;
 }
 /* line 97, ../sass/style.scss */
 motherflocker #mf-fan .body {
