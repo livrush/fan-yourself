@@ -12,8 +12,9 @@ fanYourself.controller('DisplayCtrl', function() {
       about: '<',
       close: '<',
       ref: '<',
+      mf: '<',
+      fan: '<',
       bg: '<',
-      mf: '<'
     },
     restrict: 'E',
     controller: 'DisplayCtrl',

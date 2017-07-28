@@ -4,7 +4,7 @@ fanYourself.controller('AppCtrl', function(MotherflockerFact) {
     return function(up) {
       console.log(this)
       if (up) {
-        if (this[what] < this[what + 's']) {
+        if (this[what] < this[what + 's'] - 1) {
           this[what]++;
         } else {
           this[what] = 0;
@@ -13,7 +13,7 @@ fanYourself.controller('AppCtrl', function(MotherflockerFact) {
         if (this[what] > 0) {
           this[what]--;
         } else {
-          this[what] = this[what + 's'];
+          this[what] = this[what + 's'] - 1;
         }
       }
     };
@@ -33,16 +33,22 @@ fanYourself.controller('AppCtrl', function(MotherflockerFact) {
     this.ref = false;
   }.bind(this);
 
-  // ALTERING BACKGROUNDS
-  this.backgrounds = 11;
-  this.background = 0;
-  this.updateBg = update('background', 'backgrounds').bind(this);
 
   // ALTERING MOTHERFLOCKERS
   this.mfs = MotherflockerFact.bodies;
-  this.motherflockers = this.mfs.length - 1;
+  this.motherflockers = this.mfs.length;
   this.motherflocker = 0;
-  this.updateMf = update('motherflocker', 'motherflockers').bind(this);
+  this.updateMf = update('motherflocker').bind(this);
+
+  // ALTERING BACKGROUNDS
+  this.backgrounds = 12;
+  this.background = 0;
+  this.updateBg = update('background').bind(this);
+
+  // ALTERING BACKGROUNDS
+  this.fans = 5;
+  this.fan = 0;
+  this.updateFan = update('fan').bind(this);
 })
 .directive('app', function() {
   return {
