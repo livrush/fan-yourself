@@ -183,11 +183,22 @@ motherflocker #mf-body {
 }
 /* line 107, ../sass/style.scss */
 motherflocker #mf-body .body {
+  position: relative;
   height: 300px;
   width: 180px;
+  z-index: 1;
+}
+/* line 113, ../sass/style.scss */
+motherflocker #mf-body .shadow {
+  position: absolute;
+  left: 25%;
+  bottom: 20px;
+  width: 50%;
+  box-shadow: 0 0 60px 1em black;
+  z-index: 0;
 }
 
-/* line 114, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 .overlay {
   z-index: 1;
   border-radius: 15px;
@@ -196,7 +207,7 @@ motherflocker #mf-body .body {
   box-sizing: border-box;
 }
 
-/* line 123, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 .close {
   position: absolute;
   top: 10px;
